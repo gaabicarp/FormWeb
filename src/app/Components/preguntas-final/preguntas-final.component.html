@@ -1,0 +1,67 @@
+<div class="contenedorPosicion">
+    <div class="container pt-1">
+        <div class="col-12 px-0">
+            <div class="d-flex flex-row justify-content-around">
+                <div class="containerLogo">
+                    <img src="./../../../assets/Productos/Ecologico.png">
+                </div>
+                <div class="containerLogo">
+                    <img src="./../../../assets/Productos/Ahorro.png">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mx-0">
+            <form name="Cuestionario" [formGroup]="forma" (submit)="onSubmit()">
+                <div>
+                    <h5 class="textoPreguntas my-1">¿Te gustaría generar un ahorro en tu consumo?</h5>
+                    <div class="d-flex flex-row justify-content-around mb-1">
+                        <label>
+                            <input type="radio" name="ahorro" value="SI" formControlName="ahorro">
+                            <div class="containerResp"><b>SI</b></div>
+                        </label>                
+                        <label>
+                            <input type="radio" name="ahorro" value="NO" formControlName="ahorro">
+                            <div class="containerResp"><b>NO</b></div>
+                        </label>                
+                    </div>
+                    <small class="col-10 alert alert-danger mx-auto" *ngIf="AhorroNoValido">Este campo es obligatorio</small>
+                </div>
+                <div class="mt-3">
+                    <h5 class="textoPreguntas my-1">¿Te gustaría participar del cuidado del medio ambiente?</h5>
+                    <div class="d-flex flex-row justify-content-around mb-1">
+                        <label>
+                            <input type="radio" name="ambiente" value="SI" formControlName="ambiente">
+                            <div class="containerResp"><b>SI</b></div>
+                        </label>                
+                        <label>
+                            <input type="radio" name="ambiente" value="NO" formControlName="ambiente">
+                            <div class="containerResp"><b>NO</b></div>
+                        </label>
+                    </div>
+                    <small class="col-10 alert alert-danger mx-auto" *ngIf="AmbienteNoValido">Este campo es obligatorio</small>
+                </div>
+                <div class="mt-3">
+                    <h5 class="textoPreguntas my-1">¿Estarías dispuesto a cambiar las marcas de los productos que utilizas por otras de mejor calidad y que te generen un ahorro importante en tu hogar?</h5>
+                    <div class="d-flex flex-row justify-content-around mb-1">
+                        <label>
+                            <input type="radio" name="cambio" value="SI" formControlName="cambio">
+                            <div class="containerResp"><b>SI</b></div>
+                        </label> 
+                        <label>
+                            <input type="radio" name="cambio" value="NO" formControlName="cambio">
+                            <div class="containerResp"><b>NO</b></div>
+                        </label> 
+                        <label>
+                            <input type="radio" name="cambio" value="TAL VEZ" formControlName="cambio">
+                            <div class="containerResp"><b>TAL VEZ</b></div>
+                        </label> 
+                    </div>
+                    <small class="col-10 alert alert-danger mx-auto" *ngIf="CambioNoValido">Este campo es obligatorio</small>
+                </div>    
+                <div class="my-3">
+                    <button class="col-8 btn btn-primary mb-3" type="submit">Continuar</button>
+                </div>  
+            </form>       
+        </div>
+    </div>
+</div>

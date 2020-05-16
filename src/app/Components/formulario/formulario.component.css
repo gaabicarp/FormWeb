@@ -1,0 +1,56 @@
+.ContainerImg{
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: thin;
+    overflow: hidden;
+    align-items: center;
+    border-color: gray;
+}
+
+label input[type="radio"]{
+      opacity: 0;
+}
+
+label input[type="radio"]:checked ~ .ContainerImg{
+    border-width: medium;
+    border-color: #578bf1;
+}
+
+label input[type="radio"]:checked ~ p{
+    color: #578bf1;
+}
+
+.ContainerBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: thin;
+    border-color: #c7c7c7;
+    border-radius: 5px;
+}
+
+label input[type="radio"]:checked ~ .ContainerBox{
+    border-width: medium;
+    border-color: #578bf1;
+}
+
+label input[type="radio"]:checked ~ .ContainerBox p{
+    color: #578bf1;
+}
+
+.imgProduct{
+    max-width: 3.5em;
+}
+
+.ResultadoParcial{
+    font-size: 0.8em;
+    transition: 0.7s ease;
+}
+
+.TextoPregunta{
+    color: #F2846F;
+    font-size: 1.1em;
+}

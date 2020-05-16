@@ -1,0 +1,31 @@
+<div class="contenedorPosicion">
+    <div class="container pt-0 pb-3">
+        <div class="col-12 text-center px-0">
+            <div class="containerLogo">
+                <img class="logo" src="../../../assets/Productos/Final.png">
+            </div>
+            <p class="text-secondary text-center mt-2 mb-0 textdesc">¡Felicidades {{Respuesta.Nombre}} finalizaste la encuesta!</p>
+            <p class="text-secondary text-center ">Este es tu consumo actual:</p>
+            
+            <div class="border rounded mb-4 mt-2">
+                <h5 class="text-primary mt-2">Tu compra genera</h5>
+                <div class="d-flex flex-row justify-content-around">
+                  <div>
+                    <p class="text-success mb-1 textdesc">Gasto mensual</p>
+                    <p class="text-success mb-1 font-weight-bold">${{Respuesta.RespuestaFinal.TotalMensual}}</p>
+                  </div>
+                  <div>
+                    <p class="text-warning mb-1 textdesc">Gasto anual</p>
+                    <p class="text-warning mb-1 font-weight-bold">${{Respuesta.RespuestaFinal.TotalAnual}}</p>
+                  </div>
+                  <div>
+                    <p class="text-danger mb-1 textdesc">Plastico anual</p>
+                    <p class="text-danger mb-1 font-weight-bold">{{Respuesta.RespuestaFinal.CantidadBotellas}} botellas</p>
+                  </div>
+                </div>
+              </div>
+
+            <p class="text-secondary text-center mb-4 textdesc">Pronto nos vamos a comunicar para contarte como ser un maestro en ahorro</p>
+        </div>
+    </div>
+  </div>

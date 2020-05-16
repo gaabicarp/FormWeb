@@ -1,0 +1,33 @@
+<div class="contenedorPosicion mb-2">
+  <div class="container py-1">
+    <div class="col-12 text-center px-0">
+      <h4 class="text-primary my-3">Cuidado del Hogar</h4>
+
+      <!-- PRIMER LINEA DE PREGUNTAS -->
+      <div *ngFor="let form of forms">
+        <app-formulario [title]="form.title" [productos]="form.productos" [tamProducto]="form.tamProducto" [respuesta]="RespuestaUno"></app-formulario>
+      </div>
+
+
+      <div class="border rounded my-4">
+        <h5 class="text-primary mt-2">Tu compra genera</h5>
+        <div class="d-flex flex-row justify-content-around">
+          <div>
+            <p class="text-success mb-1 textdesc">Gasto mensual</p>
+            <p class="text-success mb-1 font-weight-bold">${{Respuesta.Respuesta3.TotalMensual}}</p>
+          </div>
+          <div>
+            <p class="text-warning mb-1 textdesc">Gasto anual</p>
+            <p class="text-warning mb-1 font-weight-bold">${{Respuesta.Respuesta3.TotalAnual}}</p>
+          </div>
+          <div>
+            <p class="text-danger mb-1 textdesc">Plastico</p>
+            <p class="text-danger mb-1 font-weight-bold">{{Respuesta.Respuesta3.CantidadBotellas}} botellas</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="col-8 btn btn-primary mb-3" (click)="submit()" [routerLink]="['/ultimasPreguntas']">Continuar</a>
+    </div>
+  </div>
+</div>
