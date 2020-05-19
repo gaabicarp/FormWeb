@@ -49,7 +49,8 @@ export class PreguntasFinalComponent implements OnInit {
        console.log('FAILED...', error);
     });
 
-    // this.router.navigate(['final'])
+    this.router.navigate(['final'])
+
   }
 
   get AhorroNoValido(){

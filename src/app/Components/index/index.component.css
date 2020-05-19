@@ -27,7 +27,8 @@
 }
 
 .Logo{
-    width: 6em;
+    width: 100px;
+    height: 82px;
     margin: 0 auto;
     transform: translateY(-30px);
 }

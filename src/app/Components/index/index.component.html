@@ -19,19 +19,21 @@
                    required
                    minlength="5"
                    #nombre="ngModel">
-            <div *ngIf="nombre.invalid && nombre.touched" class="col-10 mx-auto alert alert-danger" >El nombre es requerido</div>
+            <div *ngIf="nombre.invalid && nombre.touched" class="col-10 mx-auto alert alert-danger" >El nombre es requerido y debe tener un minimo de 5 caracteres</div>
 
 
             <label for="telefono" class="text-secondary">¿Cuál es tu telefono?</label>
             <input class="col-10 mx-auto mb-4 form-control inputStyle" 
                    name="telefono" 
                    [class.is-invalid]="telefono.invalid && telefono.touched"
-                   placeholder="Ej: (011) 15-4444-4444"  
+                   placeholder="Ej: 1144444444"  
                    [ngModel]="usuario.telefono"
-                   required 
+                   required
+                   pattern="[0-9]+"
                    minlength="10"
+                   maxlength="13"
                    #telefono="ngModel">
-            <div *ngIf="telefono.invalid && telefono.touched" class="col-10 mx-auto alert alert-danger">El telefono es requerido</div>
+            <div *ngIf="telefono.invalid && telefono.touched" class="col-10 mx-auto alert alert-danger">El telefono es requerido y debe tener un formato codarea + numero </div>
             <p class="font-weight-bold">¿Querés dar tu primer paso hacia un consumo inteligente?</p>
             <button class="col-8 btn btn-primary mb-3" type="submit">SÍ, QUIERO</button>        
           </form>

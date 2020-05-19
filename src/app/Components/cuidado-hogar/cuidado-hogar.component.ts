@@ -12,10 +12,10 @@ export class CuidadoHogarComponent implements OnInit {
 
   forms:Array<Form> = [
     {
-      title: 'Limpiador de Cocina',
+      title: 'Desengrasante',
       productos:[
         {
-          nombreProducto: 'Cif',
+          nombreProducto: 'Cif Antigrasa',
           precioUnitario: 58,
           imgUrl: './../../../../assets/Productos/Cif.png'
         },
@@ -26,7 +26,7 @@ export class CuidadoHogarComponent implements OnInit {
         },
         {
           nombreProducto: 'Otro',
-          precioUnitario: 85,
+          precioUnitario: 45,
           imgUrl: './../../../../assets/Productos/Otro.png'
         }
       ],

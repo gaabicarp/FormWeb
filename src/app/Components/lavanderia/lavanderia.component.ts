@@ -88,6 +88,27 @@ export class LavanderiaComponent implements OnInit {
       tamProducto: true,
     },
     {
+      title: 'Blanqueador',
+      productos:[
+        {
+          nombreProducto: 'Vanish',
+          precioUnitario: 92,
+          imgUrl: './../../../../assets/Productos/Vanish.png'
+        },
+        {
+          nombreProducto: 'Ala',
+          precioUnitario: 100,
+          imgUrl: './../../../../assets/Productos/Ala.png'
+        },
+        {
+          nombreProducto: 'Otro',
+          precioUnitario: 75,
+          imgUrl: './../../../../assets/Productos/Otro.png'
+        }
+      ],
+      tamProducto: false,
+    },
+    {
       title: 'Quitamanchas',
       productos:[
         {
@@ -96,7 +117,7 @@ export class LavanderiaComponent implements OnInit {
           imgUrl: './../../../../assets/Productos/Vanish.png'
         },
         {
-          nombreProducto: 'Ayudin',
+          nombreProducto: 'Rex',
           precioUnitario: 106,
           imgUrl: './../../../../assets/Productos/Rex.png'
         },

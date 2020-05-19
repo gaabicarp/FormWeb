@@ -35,27 +35,6 @@ export class LimpiezayCuidadoComponent implements OnInit {
       tamProducto: true,
     },
     {
-      title: 'Desengrasante',
-      productos:[
-        {
-          nombreProducto: 'Cif Antigrasa',
-          precioUnitario: 58,
-          imgUrl: './../../../../assets/Productos/Cif.png'
-        },
-        {
-          nombreProducto: 'Mr Musculo',
-          precioUnitario: 53,
-          imgUrl: './../../../../assets/Productos/Mr Musculo.png'
-        },
-        {
-          nombreProducto: 'Otro',
-          precioUnitario: 45,
-          imgUrl: './../../../../assets/Productos/Otro.png'
-        }
-      ],
-      tamProducto: true,
-    },
-    {
       title: 'Pasta dental',
       productos:[
         {
@@ -90,7 +69,7 @@ export class LimpiezayCuidadoComponent implements OnInit {
           imgUrl: './../../../../assets/Productos/Colgate.png'
         },
         {
-          nombreProducto: 'Listenine',
+          nombreProducto: 'Listerine',
           precioUnitario: 275,
           imgUrl: './../../../../assets/Productos/Listerine.png'
         },

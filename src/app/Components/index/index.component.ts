@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RespuestaService } from 'src/app/Services/respuesta.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 
 
@@ -16,6 +15,7 @@ export class IndexComponent implements OnInit {
     nombre:'',
     telefono:'',
   }
+
 
   constructor(private Respuesta: RespuestaService, private router: Router) { }
 
