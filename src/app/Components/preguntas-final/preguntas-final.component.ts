@@ -31,6 +31,22 @@ export class PreguntasFinalComponent implements OnInit {
     this.Respuesta.RespuestaCuestionario.respuestaCambio = this.forma.value.cambio
 
     var templateParams = {
+      //Cuidado Del Hogar
+      desengrasante: this.Respuesta.Respuesta1.Detalle[0],
+      limpiadorDePiso: this.Respuesta.Respuesta1.Detalle[1],
+      desinfectante : this.Respuesta.Respuesta1.Detalle[2],
+      limpiadorDeMuebles: this.Respuesta.Respuesta1.Detalle[3],
+      //Lavanderia
+      jabonliquido: this.Respuesta.Respuesta2.Detalle[0],
+      JabonEnPolvo: this.Respuesta.Respuesta2.Detalle[1],
+      suavizante: this.Respuesta.Respuesta2.Detalle[2],
+      blanqueador: this.Respuesta.Respuesta2.Detalle[3],
+      quitamanchas: this.Respuesta.Respuesta2.Detalle[4],
+      //CuidadoPersonal
+      detergente: this.Respuesta.Respuesta3.Detalle[0],
+      pastaDental: this.Respuesta.Respuesta3.Detalle[1],
+      enjuageBucal: this.Respuesta.Respuesta3.Detalle[2],
+      //Resto
       clienteNombre: this.Respuesta.Nombre,
       clienteTelefono: this.Respuesta.Telefono,
       totalMensual: this.Respuesta.RespuestaFinal.TotalMensual,
@@ -38,7 +54,7 @@ export class PreguntasFinalComponent implements OnInit {
       totalBotellas: this.Respuesta.RespuestaFinal.CantidadBotellas,
       aceptaAhorro: this.Respuesta.RespuestaCuestionario.respuestaAhorro,
       aceptaAmbiente: this.Respuesta.RespuestaCuestionario.respuestaAmbiente,
-      aceptaCambio: this.Respuesta.RespuestaCuestionario.respuestaCambio
+      aceptaCambio: this.Respuesta.RespuestaCuestionario.respuestaCambio,
     }
 
     await emailjs.send('formweb', 'template_yQjnXtpW', templateParams, 'user_4v7ovCqJh03hBYynPF768')

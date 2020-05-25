@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "formweb-6a8db"
+  },
+  "targets": {
+    "formweb-6a8db": {
+      "hosting": {
+        "Proyect": [
+          "formweb-6a8db"
+        ]
+      }
+    }
   }
 }

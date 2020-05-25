@@ -10,6 +10,7 @@ export class LavanderiaComponent implements OnInit {
 
   forms:Array<Form> = [
     {
+      id: 0,
       title: 'Jabon liquido para ropa',
       productos:[
         {
@@ -36,6 +37,7 @@ export class LavanderiaComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 1,
       title: 'Jabon en polvo',
       productos:[
         {
@@ -62,6 +64,7 @@ export class LavanderiaComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 2,
       title: 'Suavizante',
       productos:[
         {
@@ -88,6 +91,7 @@ export class LavanderiaComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 3,
       title: 'Blanqueador',
       productos:[
         {
@@ -109,6 +113,7 @@ export class LavanderiaComponent implements OnInit {
       tamProducto: false,
     },
     {
+      id: 4,
       title: 'Quitamanchas',
       productos:[
         {
@@ -157,6 +162,7 @@ export class LavanderiaComponent implements OnInit {
 
 
 export class Form{
+  id: number;
   title:string;
   productos:Array<Producto>;
   tamProducto:boolean;

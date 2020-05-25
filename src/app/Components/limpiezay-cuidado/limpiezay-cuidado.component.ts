@@ -9,6 +9,7 @@ import { RespuestaService } from 'src/app/Services/respuesta.service';
 export class LimpiezayCuidadoComponent implements OnInit {
   forms:Array<Form> = [
     {
+      id: 0,
       title: 'Detergente',
       productos:[
         {
@@ -35,6 +36,7 @@ export class LimpiezayCuidadoComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 1,
       title: 'Pasta dental',
       productos:[
         {
@@ -61,6 +63,7 @@ export class LimpiezayCuidadoComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 2,
       title: 'Enjuage bucal',
       productos:[
         {
@@ -102,6 +105,7 @@ export class LimpiezayCuidadoComponent implements OnInit {
 
 
 export class Form{
+  id: number;
   title:string;
   productos:Array<Producto>;
   tamProducto: boolean;

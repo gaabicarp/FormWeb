@@ -12,6 +12,7 @@ export class CuidadoHogarComponent implements OnInit {
 
   forms:Array<Form> = [
     {
+      id: 0,
       title: 'Desengrasante',
       productos:[
         {
@@ -33,6 +34,7 @@ export class CuidadoHogarComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 1,
       title: 'Limpiador de Piso',
       productos:[
         {
@@ -59,6 +61,7 @@ export class CuidadoHogarComponent implements OnInit {
       tamProducto: true,
     },
     {
+      id: 2,
       title: 'desinfectante',
       productos:[
         {
@@ -80,6 +83,7 @@ export class CuidadoHogarComponent implements OnInit {
       tamProducto: false,
     },
     {
+      id: 3,
       title: 'Limpiador de Muebles',
       productos:[
         {
@@ -125,6 +129,7 @@ export class CuidadoHogarComponent implements OnInit {
 
 
 export class Form{
+  id: number;
   title:string;
   productos:Array<Producto>;
   tamProducto: boolean;

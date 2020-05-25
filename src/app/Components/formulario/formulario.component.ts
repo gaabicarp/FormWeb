@@ -14,6 +14,7 @@ export class FormularioComponent implements OnInit {
   @Input() productos:Array<any>;
   @Input() respuesta:any;
   @Input() tamProducto:boolean
+  @Input() id:number;
   productoSeleccionado = {
     precio: 0,
     tamanio: 1,
@@ -34,61 +35,15 @@ export class FormularioComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // console.log('desdecomp',this.productos)
+    let respuestaForm = this.title + ': Este producto no fue seleccionado'
+    this.respuesta.Detalle[this.id] = respuestaForm;
+    console.log(this.id)
   }
 
   productoChangeHandler(){
-    console.log(this.forma)
-
-    this.respuesta.TotalMensual -= this.TotalParcial
-    this.respuesta.CantidadBotellas -= this.Botellas
-    // console.log(forma.value)
-    this.productoSeleccionado.precio = JSON.parse(this.forma.value.producto);
-    this.productoSeleccionado.dias = JSON.parse(this.forma.value.tiempo);
-    this.productoSeleccionado.tamanio = JSON.parse(this.forma.value.tamaño);
-
-    this.Botellas = Math.round(30 / this.productoSeleccionado.dias)
-    
-    this.TotalParcial = Math.round(this.productoSeleccionado.precio * this.productoSeleccionado.tamanio * this.Botellas)
-
-    this.respuesta.TotalMensual += this.TotalParcial
-    this.respuesta.TotalAnual = this.respuesta.TotalMensual * 12
-    this.respuesta.CantidadBotellas += this.Botellas
-    console.log(this.respuesta.TotalMensual)
-
-    // console.log(event.target.value)
-    // this.respuesta.TotalMensual = this.respuesta.TotalMensual - this.TotalParcial;
-    // if(event.target.name="tamaño"){
-    //   this.productSelectValue = this.productSelectValue / this.tamaño
-    //   this.tamaño = event.target.value;
-    //   this.productSelectValue = this.productSelectValue * this.tamaño
-    // }
-  
-    // if(event.target.name==='Producto'){
-    //   this.productSelectName = event.target.value;
-    //   this.productos.map(prod=>{
-    //     if(prod.nombreProducto === this.productSelectName){
-    //       this.productSelectValue = prod.precioUnitario * this.tamaño ;
-    //     }
-    //   })
-    // }
-
-    // if(event.target.name==='tiempo'){
-    //   this.respuesta.CantidadBotellas = this.respuesta.CantidadBotellas - this.Botellas;
-    //   this.dias = event.target.value;
-    //   this.Botellas = Math.round(30/this.dias);
-    //   this.respuesta.CantidadBotellas = this.respuesta.CantidadBotellas + this.Botellas;
-    // }
-
-    // if(this.productSelectValue!=0 && this.dias!=0){
-    //   this.bandera = true;
-    // }
-    // this.TotalParcial= this.productSelectValue * this.Botellas;
-    // this.respuesta.TotalMensual = this.respuesta.TotalMensual + this.TotalParcial;
-    // this.respuesta.TotalAnual = this.respuesta.TotalMensual * 12;
-    // // console.log(this.Respuesta.Respuesta1.TotalMensual);
-    // console.log(this.productSelectValue)
-  // console.log(this.Respuesta.Respuesta1.CantidadBotellas);
+    this.setRespuesta()
+    this.setRespuestaDetalle()
+    console.log(this.respuesta)
 }
 
 crearFormulario(){
@@ -97,6 +52,45 @@ crearFormulario(){
     tiempo:[30, Validators.required],
     tamaño:[1, Validators.required]
   })
+}
+
+setRespuesta(){
+  this.respuesta.TotalMensual -= this.TotalParcial
+  this.respuesta.CantidadBotellas -= this.Botellas
+  this.productoSeleccionado.precio = JSON.parse(this.forma.value.producto);
+  this.productoSeleccionado.dias = JSON.parse(this.forma.value.tiempo);
+  this.productoSeleccionado.tamanio = JSON.parse(this.forma.value.tamaño);
+
+  this.Botellas = Math.round(30 / this.productoSeleccionado.dias)
+  
+  this.TotalParcial = Math.round(this.productoSeleccionado.precio * this.productoSeleccionado.tamanio * this.Botellas)
+
+  this.respuesta.TotalMensual += this.TotalParcial
+  this.respuesta.TotalAnual = this.respuesta.TotalMensual * 12
+  this.respuesta.CantidadBotellas += this.Botellas
+}
+
+setRespuestaDetalle(){
+  let producto = this.productos.filter(producto=>{
+    return producto.precioUnitario === JSON.parse(this.forma.value.producto)
+  })
+  let tam:string;
+  if(this.forma.value.tamaño === '1'){
+    tam = 'Chico'
+  } else if (this.forma.value.tamaño === '1.8'){
+    tam = 'Mediano'
+  } else{
+    tam = 'Grande'
+  }
+
+  if(this.tamProducto == false){
+    tam = 'Único'
+  }
+  
+  let respuestaForm = this.title + ': ' + producto[0].nombreProducto + ', cada ' + this.forma.value.tiempo + ' dias, de tamaño ' + tam;
+  
+
+  this.respuesta.Detalle[this.id] = respuestaForm;
 }
 
 }

@@ -1,11 +1,11 @@
 <div class="contenedorPosicion mb-2">
   <div class="container py-1">
     <div class="col-12 text-center px-0">
-      <h4 class="text-primary my-3">Cuidado del Hogar</h4>
+      <h4 class="text-primary my-3">Limpieza y Cuidado Personal</h4>
 
       <!-- PRIMER LINEA DE PREGUNTAS -->
       <div *ngFor="let form of forms">
-        <app-formulario [title]="form.title" [productos]="form.productos" [tamProducto]="form.tamProducto" [respuesta]="RespuestaUno"></app-formulario>
+        <app-formulario [title]="form.title" [id]="form.id" [productos]="form.productos" [tamProducto]="form.tamProducto" [respuesta]="RespuestaUno"></app-formulario>
       </div>
 
 
