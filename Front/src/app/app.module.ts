@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 //Firebase
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
+// import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireModule } from '@angular/fire';
+// import { environment } from '../environments/environment';
 
 //rutas
 import { AppRoutingModule } from './app-routing.module';
@@ -44,9 +44,9 @@ import { LoginComponent } from './Components/login/login.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule,
-    AngularFirestoreModule
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireAnalyticsModule,
+    // AngularFirestoreModule
   ],
   providers: [
     RespuestaService

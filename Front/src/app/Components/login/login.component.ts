@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public _fw: FormWebService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -30,6 +30,6 @@ export class LoginComponent implements OnInit {
     console.log(forma.value.password)
     console.log(forma.value.usuario)
 
-    this._fw.login(forma.value.usuario, forma.value.password);
+    // this._fw.login(forma.value.usuario, forma.value.password);
   }
 }
