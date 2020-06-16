@@ -87,7 +87,7 @@ setRespuestaDetalle(){
     tam = 'Único'
   }
   
-  let respuestaForm = this.title + ': ' + producto[0].nombreProducto + ', cada ' + this.forma.value.tiempo + ' dias, de tamaño ' + tam;
+  let respuestaForm = this.title + ': El cliente usa' + producto[0].nombreProducto + ', de tamaño ' + tam + ' y lo compra cada ' + this.forma.value.tiempo + 'días.';
   
 
   this.respuesta.Detalle[this.id] = respuestaForm;

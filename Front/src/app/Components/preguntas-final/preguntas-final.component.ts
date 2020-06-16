@@ -3,6 +3,7 @@ import { RespuestaService } from 'src/app/Services/respuesta.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-preguntas-final',
@@ -12,7 +13,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 export class PreguntasFinalComponent implements OnInit {
   forma: FormGroup;
   
-  constructor(public Respuesta: RespuestaService, private fb: FormBuilder, private router: Router) { }
+  constructor(public Respuesta: RespuestaService, private fb: FormBuilder, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     this.crearFormulario();
@@ -55,15 +56,12 @@ export class PreguntasFinalComponent implements OnInit {
       aceptaAhorro: this.Respuesta.RespuestaCuestionario.respuestaAhorro,
       aceptaAmbiente: this.Respuesta.RespuestaCuestionario.respuestaAmbiente,
       aceptaCambio: this.Respuesta.RespuestaCuestionario.respuestaCambio,
+      Id: this.Respuesta.IdUsuario
     }
 
-    await emailjs.send('formweb', 'template_yQjnXtpW', templateParams, 'user_4v7ovCqJh03hBYynPF768')
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-       
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
+    await this.userService.postResultado(templateParams).subscribe(res=>{
+      console.log(res)
+    })
 
     this.router.navigate(['final'])
 

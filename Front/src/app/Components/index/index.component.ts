@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RespuestaService } from 'src/app/Services/respuesta.service';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -16,15 +16,14 @@ export class IndexComponent implements OnInit {
     telefono:'',
   }
 
+  id:string;
 
-  constructor(private Respuesta: RespuestaService, private router: Router) { }
+
+  constructor(private Respuesta: RespuestaService, private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.id = this.route.snapshot.params.id
   }
-
-
-  
 
   guardar(forma:NgForm){
 
@@ -34,6 +33,7 @@ export class IndexComponent implements OnInit {
       })
       return
     }
+    this.Respuesta.IdUsuario = this.id;
     this.Respuesta.Nombre = forma.value.nombre;
     this.Respuesta.Telefono = forma.value.telefono;
     this.router.navigate(['Hogar'])

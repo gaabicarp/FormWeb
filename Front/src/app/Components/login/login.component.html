@@ -4,7 +4,7 @@
         <img class="Logo" src="../assets/Logo.png">
       </div>
       <div class="col-12 text-center px-2 py-0">
-          <h2 class="text-primary mb-3">Login</h2>
+          <h2 class="text-primary mb-3">Bienvenido</h2>
 
         <div class="form-group">
 
@@ -34,8 +34,13 @@
             >
             <!-- <div *ngIf="telefono.invalid && telefono.touched" class="col-10 mx-auto alert alert-danger">El telefono es requerido y debe tener un formato codarea + numero </div> -->
             <!-- <p class="font-weight-bold">¿Querés dar tu primer paso hacia un consumo inteligente?</p> -->
+            <div *ngIf="error" class="col-10 mx-auto alert alert-danger">{{errorMensaje}}</div>
             <button class="col-8 btn btn-primary mb-3" type="submit">Ingresar</button>        
+            <div *ngIf="load" class="col-10 mx-auto text-primary"><i class="fas fa-spinner fa-spin"></i></div>
           </form>
+        </div>
+        <div>
+          <p class="text-center">¿No tenes cuenta? <b class="text-primary"><a [routerLink]="['/registro']">Registrate.</a></b></p>
         </div>
       </div>
     </div>

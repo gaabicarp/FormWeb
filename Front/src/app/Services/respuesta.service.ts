@@ -5,6 +5,7 @@ import { Respuesta } from '../model/Respuesta';
   providedIn: 'root'
 })
 export class RespuestaService {
+  IdUsuario: string;
   Respuesta1: Respuesta = new Respuesta();
   Respuesta2: Respuesta = new Respuesta();
   Respuesta3: Respuesta = new Respuesta();
