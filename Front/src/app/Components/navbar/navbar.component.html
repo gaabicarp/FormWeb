@@ -1,0 +1,63 @@
+<nav class="navbar navbar-light bg">
+    <div class="d-flex flex-row justify-content-around align-items-center">
+        <div class="containerLogo">
+            <img class="Logo" src="../assets/Logo.png">
+        </div>
+      <h5 class="px-0 pr-xl-5 mb-0 text-white">Form Web</h5>
+      <!-- <i class="fas fa-circle text-success ml-2" id="conexion"></i> -->
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarMenu"
+      aria-controls="navbarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon aling-items-right"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link d-flex flex-row align-self-center text-white float-right" data-toggle="modal" data-target="#LinkForm">
+            <h6 class="mr-2">Compartir mi formulario</h6>
+            <i class="fas fa-share-square"></i>
+          </a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+            <a class="nav-link d-flex flex-row align-self-center text-white float-right" [routerLink]="['/configuracion']">
+              <h6 class="mr-2">Configuración</h6>
+              <i class="fas fa-cog"></i>
+            </a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+            <a class="nav-link d-flex flex-row align-self-center text-white float-right" (click)="logout()"> 
+              <h6 class="mr-2">Cerrar sesion</h6>
+              <i class="fas fa-door-open"></i>
+            </a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="LinkForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center mx-auto text-primary" id="exampleModalLabel">Compartí el siguiente Link</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input #userinput class="col-10 mx-auto mb-4 form-control inputStyle" value="{{link}}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary mx-auto" (click)="copy(userinput)">Copiar</button>
+      </div>
+      <div *ngIf="copiado" class="mx-auto alert alert-success">Copiado!</div>
+    </div>
+  </div>
+</div>
+  

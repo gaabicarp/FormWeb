@@ -62,7 +62,7 @@ export class CuidadoHogarComponent implements OnInit {
     },
     {
       id: 2,
-      title: 'desinfectante',
+      title: 'Desinfectante',
       productos:[
         {
           nombreProducto: 'Lysoform',
@@ -94,7 +94,7 @@ export class CuidadoHogarComponent implements OnInit {
         {
           nombreProducto: 'Blem',
           precioUnitario: 160,
-          imgUrl: './../../../../assets/Productos/Lysoform.png'
+          imgUrl: './../../../../assets/Productos/Blem.png'
         },
         {
           nombreProducto: 'Otro',

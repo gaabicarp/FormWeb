@@ -1,0 +1,5 @@
+<app-navbar></app-navbar>
+<div class="mt-4 container" *ngFor="let item of results">
+  <app-result-item [respuesta]="item"></app-result-item>
+  <div *ngIf="isLoading" class="col-10 mx-auto text-primary bg-white rounded"><i class="fas fa-spinner fa-spin"></i></div>
+</div>

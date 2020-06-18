@@ -1,0 +1,10 @@
+.Logo{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+body{
+    background-image: none;
+    background-color: white;
+}

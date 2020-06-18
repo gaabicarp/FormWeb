@@ -1,0 +1,111 @@
+<nav class="navbar navbar-light bg">
+    <a class="navbar-brand text-white" (click)="back()">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <h5 class="text-white mx-auto">Detalle</h5>
+</nav>
+
+<div>
+    <div class="container">
+        <div class="col-12 text-center px-2 py-4 align-items-center">
+
+            <div *ngIf="!isLoading">
+                <div>
+                    <h6 class="text-secondary mb-4">Encuesta #{{respuesta._id}}</h6>
+                </div>
+                <div class="d-flex flex-row justify-content-around mb-3">
+                    <div>
+                        <p class="mb-1 text-primary w-50">Cliente:</p>
+                        <p class="mb-1 text-secondary">{{respuesta.Cliente.clienteNombre}}</p>
+                    </div>
+                     <div>
+                        <p class="mb-1 text-primary">Telefono:</p>
+                        <p class="mb-1 text-secondary">{{respuesta.Cliente.clienteTelefono}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="titulo">Cuidado del Hogar</h5>
+                    <ol class="list-group text-left">
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoHogar.desengrasante}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoHogar.desinfectante}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoHogar.limpiadorDeMuebles}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoHogar.limpiadorDePiso}}</p>
+                        </li>
+                    </ol>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="titulo">Lavandería</h5>
+                    <ol class="list-group">
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.Lavanderia.JabonEnPolvo}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.Lavanderia.blanqueador}}</p>
+                        </li>   
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.Lavanderia.jabonliquido}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.Lavanderia.quitamanchas}}</p>
+                        </li>
+                    </ol>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="titulo">Cuidado Personal</h5>
+                    <ol class="list-group">
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoPersonal.detergente}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoPersonal.enjuageBucal}}</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action list-group-item-primary mb-2">
+                            <p class="detalle">{{respuesta.DetalleEncuesta.CuidadoPersonal.pastaDental}}</p>
+                        </li>
+                    </ol>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="titulo">Total</h5>
+                    <div class="text-left">
+                        <p><span class="text-success font-weight-bolder">¿Quiere generar ahorro?:</span> {{respuesta.Resumen.aceptaAhorro}}</p>
+                        <p><span class="text-success font-weight-bolder">¿Quiere cuidar el medio ambiente?:</span> {{respuesta.Resumen.aceptaAmbiente}}</p>
+                        <p><span class="text-success font-weight-bolder">¿Acepta cambiar de productos?:</span> {{respuesta.Resumen.aceptaCambio}}</p>
+                    </div>
+                    <hr>
+                    <div class="border rounded mb-4 mt-2">
+                        <h5 class="text-primary mt-2">Total Final</h5>
+                        <div class="d-flex flex-row justify-content-around">
+                        <div>
+                            <p class="text-success mb-1 detalle">Gasto mensual</p>
+                            <p class="text-success mb-1 font-weight-bold">{{respuesta.Resumen.totalMensual}}</p>
+                        </div>
+                        <div>
+                            <p class="text-warning mb-1 detalle">Gasto anual</p>
+                            <p class="text-warning mb-1 font-weight-bold">{{respuesta.Resumen.totalAnual}}</p>
+                        </div>
+                        <div>
+                            <p class="text-danger mb-1 detalle">Plastico anual</p>
+                            <p class="text-danger mb-1 font-weight-bold">{{respuesta.Resumen.totalBotellas}} botellas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="isLoading">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+
+        </div>
+    </div>
+</div>

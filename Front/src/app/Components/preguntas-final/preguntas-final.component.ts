@@ -12,6 +12,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class PreguntasFinalComponent implements OnInit {
   forma: FormGroup;
+  load:boolean = false;
   
   constructor(public Respuesta: RespuestaService, private fb: FormBuilder, private router: Router, private userService: UserService) { }
 
@@ -21,6 +22,7 @@ export class PreguntasFinalComponent implements OnInit {
   }
 
   async onSubmit(){
+    this.load = true;
     if(this.forma.invalid){
       Object.values(this.forma.controls).forEach(control=>{
         control.markAllAsTouched()

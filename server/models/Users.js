@@ -9,12 +9,13 @@ const userSchema = new mongoose.Schema({
     Password:{
         type: String,
     },
-    // Habilitado:{
-    //     type: Boolean,
-    // },
-    // FechaInicio:{
-    //     type: Date,
-    // }
+    Habilitado:{
+        type: Number,
+        default: 0,
+    },
+    FechaInicio:{
+        type: Date,
+    }
 })
 
 const User = mongoose.model("User", userSchema);

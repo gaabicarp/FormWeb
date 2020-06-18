@@ -16,7 +16,8 @@ const UserController = {
 
             const nuevoUser = new User({
                 Email: req.body.Email,
-                Password: req.body.Password
+                Password: req.body.Password,
+                FechaInicio: new Date().toLocaleString()
             })
 
             bcrypt.genSalt(10).then(salts=>{

@@ -1,0 +1,69 @@
+<div class="contenedorPosicion">
+    <div class="container py-2">
+      <div class="containerLogo">
+        <img class="Logo" src="../assets/Logo.png">
+      </div>
+      <div class="col-12 text-center px-2 py-0">
+          <h2 class="text-primary mb-3">Registro</h2>
+
+        <div class="form-group">
+
+          <form name="registro" #forma="ngForm" (ngSubmit)="IraPago(forma)">
+
+            <label for="correo" class="text-secondary">Email</label>
+            <input class="col-10 mx-auto mb-2 form-control inputStyle" 
+                   type="text" 
+                   name="correo" 
+                   [ngModel]="registro.correo"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                   [class.is-invalid]="correo.invalid && correo.touched"
+                   required
+                   minlength="5"
+                   #correo="ngModel"
+                   >
+            <div *ngIf="correo.invalid && correo.touched" class="col-10 mx-auto alert alert-danger" >El email debe ser valido</div>
+
+
+            <label for="password" class="text-secondary">Contraseña</label>
+            <input class="col-10 mx-auto mb-2 form-control inputStyle" 
+                   type="password"
+                   name="password" 
+                   [class.is-invalid]="password.invalid && password.touched"
+                   [ngModel]="registro.password"
+                   required                   
+                   minlength="8"
+                   #password="ngModel"
+            >
+            <div *ngIf="password.invalid && password.touched" class="col-10 mx-auto alert alert-danger" >El password debe tener minimo 8 caracteres</div>
+
+            <label for="confirmpassword" class="text-secondary">Confirmar Contraseña</label>
+            <input class="col-10 mx-auto mb-4 form-control inputStyle" 
+                   type="password"
+                   name="confirmpassword" 
+                   [class.is-invalid]="confirmpassword.invalid && confirmpassword.touched"
+                   [ngModel]="registro.confirmpassword"
+                   appConfirmPassword="password"
+                   required                   
+                   #confirmpassword="ngModel"
+            >
+            <div *ngIf="confirmpassword.errors?.notEqual && confirmpassword.touched" class="col-10 mx-auto alert alert-danger" >Los password deben coincidir</div>
+            
+            <div *ngIf="mensajeOk" class="col-10 mx-auto alert alert-success">Usuario creado exitosamente</div>
+            <div *ngIf="mensajeFail" class="col-10 mx-auto alert alert-danger">Error: {{error}}</div>
+            <button class="col-8 btn btn-primary mb-3" type="submit">Registrarse</button>        
+            <div *ngIf="load" class="col-10 mx-auto text-primary"><i class="fas fa-spinner fa-spin"></i></div>
+          </form>
+
+
+          <div id="botonMp">
+
+          </div>
+       
+        </div>
+        <div class="mb-4">
+          <p class="text-center">¿Ya tenes cuenta? <b class="text-primary"><a [routerLink]="['/login']">Ingresa.</a></b></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
